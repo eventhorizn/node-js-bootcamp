@@ -1,4 +1,5 @@
 // Creating a server
+// Things like Express.js make a lot of this easier
 const http = require('http');
 const fs = require('fs');
 
@@ -15,10 +16,30 @@ const server = http.createServer((req, res) => {
     }
 
     if (url === '/message' && method === 'POST') {
-        fs.writeFileSync('message.txt', 'DUMMY');
-        res.statusCode = 302; //redirect
-        res.setHeader('Location', '/');
-        return res.end();
+        const body = [];
+
+        req.on('data', (chunk) => {
+            body.push(chunk);
+        });
+
+        // We have all these chunks, we need to buffer them
+        // 'Bus' is waiting, what to do w/ it?
+        // We return the req.on, so that when this is hit,
+        // we don't continue on to lower code
+        return req.on('end', () => {
+            const parsedBody = Buffer.concat(body).toString();
+            const message = parsedBody.split('=')[1];
+
+            // Sync, blocks execution until it's done
+            // fs.writeFileSync('message.txt', message);
+            // B/c of async, you need to make sure things
+            // run in the correct order w/ callbacks
+            fs.writeFile('message.txt', message, (err) => {
+                res.statusCode = 302; //redirect
+                res.setHeader('Location', '/');
+                return res.end();
+            });
+        });
     }
 
     res.setHeader('Content-Type', 'text/html');
