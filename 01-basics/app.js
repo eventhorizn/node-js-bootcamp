@@ -1,7 +1,7 @@
 // Creating a server
 // Things like Express.js make a lot of this easier
 const http = require('http');
-const routes = require('./routes')
+const routes = require('./routes');
 
 console.log(routes.someText);
 

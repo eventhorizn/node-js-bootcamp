@@ -1,6 +1,7 @@
 # Node JS Bootcamp
 
-[Install NodeJS](https://nodejs.org/en/)
+1. [Install NodeJS](https://nodejs.org/en/)
+1. [Offical Docs](https://nodejs.org/en/docs/guides/)
 
 ## Running a node js file
 
@@ -33,7 +34,24 @@ node first-app.js
 1. [Request/Response Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
 1. Single Thread, Event Loop, Blocking Code
    ![](images/single-thread-el-block.png)
+   - [Link](https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
 1. The Event Loop
    ![](images/event-loop.png)
    - Takeaway, event loop prioritizes jobs so that short jobs take priority
-   - Performance is key
+     - Performance is key
+   - [Link](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/)
+1. Creating a Server
+
+   ```js
+   // Creating a server
+   // Things like Express.js make a lot of this easier
+   const http = require('http');
+   const routes = require('./routes');
+
+   console.log(routes.someText);
+
+   const server = http.createServer(routes.handler);
+
+   // Starts a process where node will keep it running for incoming requests
+   server.listen(3000);
+   ```
