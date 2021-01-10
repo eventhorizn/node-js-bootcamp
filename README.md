@@ -31,3 +31,9 @@ node first-app.js
 ## The Basics
 
 1. [Request/Response Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+1. Single Thread, Event Loop, Blocking Code
+   ![](images/single-thread-el-block.png)
+1. The Event Loop
+   ![](images/event-loop.png)
+   - Takeaway, event loop prioritizes jobs so that short jobs take priority
+   - Performance is key
