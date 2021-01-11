@@ -112,6 +112,8 @@ node first-app.js
    });
    ```
 
+   - use hits all http requests (get, post, put exist)
+
 ## Why?
 
 1. Server Logic is complex
