@@ -91,3 +91,28 @@ node first-app.js
    - [VS Code Link](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
    - VS Code debugger lets you change values while debugging
    - Debugger tab, double cliick on variable
+
+# Express.js
+
+1. This will be a production dependency
+   ```cmd
+   npm install --save express
+   ```
+
+## Why?
+
+1. Server Logic is complex
+   - Listen to request 'on' event
+   - Parse request
+   - Check url routes
+1. We want to focus on Business Logic, not nitty-gritty details
+   - Use a framework for this!
+
+## Alternatives
+
+1. Vanilla Node.js
+   - Depending on complexity of app
+1. Adonis.js
+   - Laravel/php inspired
+1. Koa
+1. Sails.js
