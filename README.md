@@ -100,6 +100,18 @@ node first-app.js
    ```
 1. It's all about Middleware
 
+   ```js
+   app.use((req, res, next) => {
+   	console.log('In the middleware');
+   	next();
+   });
+
+   app.use((req, res, next) => {
+   	console.log('In another middleware');
+   	res.send('<h1>Hello from Express!</h1>');
+   });
+   ```
+
 ## Why?
 
 1. Server Logic is complex
