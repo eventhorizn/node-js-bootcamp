@@ -55,3 +55,39 @@ node first-app.js
    // Starts a process where node will keep it running for incoming requests
    server.listen(3000);
    ```
+
+# Development Workflow & Debugging
+
+## NPM Scripts
+
+1. You need [NPM](https://www.npmjs.com/)
+1. Set up a NPM project
+   ```cmd
+   npm init
+   ```
+   - Creates a package.json file
+1. Run a project
+   ```cmd
+   npm start
+   ```
+
+## 3rd Party Packages
+
+1. Server Auto Restart (nodemon)
+   - [Link](https://www.npmjs.com/package/nodemon)
+   ```cmd
+   npm install nodemon
+   ```
+   - You can determine 'how' it gets installed
+     ```
+     npm install nodemon --save-dev
+     ```
+     - Installs just on your project, not globally
+   - Can just reinstall w/ `node install`
+1. Nodemon is nice
+   - Restarts your server when you make a change
+1. Debugging Nodejs
+   - [Node Link](https://nodejs.org/en/docs/guides/debugging-getting-started/)
+   - [VS Code Link](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
+   - VS Code debugger lets you change values while debugging
+   - Debugger tab, double cliick on variable
