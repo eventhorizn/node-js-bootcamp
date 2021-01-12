@@ -94,6 +94,17 @@ node first-app.js
 
 # Express.js
 
+[Express.js](https://expressjs.com/en/starter/installing.html) is a Node.js framework
+
+- A package that adds a bunch of utility functions and tools
+- A clear set of rules on how the app should be built (middleware)
+- Highly extensible and other packages can be plugged into it (other middleware)
+
+Express.js relies heavily on middleware functions
+
+- Easily add them by calling use()
+- Middleware functions handle a request and should call next() to forward the request to the next function in line or send a response
+
 1. This will be a production dependency
    ```cmd
    npm install --save express
@@ -131,3 +142,9 @@ node first-app.js
    - Laravel/php inspired
 1. Koa
 1. Sails.js
+
+# Templating Engines
+
+1. EJS
+1. Pug (Jade)
+1. Handlebars
