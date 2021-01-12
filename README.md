@@ -146,5 +146,18 @@ Express.js relies heavily on middleware functions
 # Templating Engines
 
 1. EJS
+   ```ejs
+   <p><%= name %></p>
+   ```
+   - Use normal html and plain js in templates
 1. Pug (Jade)
+   ```pug
+   p #{name}
+   ```
+   - Minimal html and custom template language
+   - [Official Docs](https://pugjs.org/api/getting-started.html)
 1. Handlebars
+   ```handlebars
+   <p>{{ name }} </P>
+   ```
+   - Normal HTML, custom template language
