@@ -145,6 +145,10 @@ Express.js relies heavily on middleware functions
 
 # Templating Engines
 
+The way you pass data into a templatle engine doesn't change
+
+Just the way you use it
+
 1. EJS
    ```ejs
    <p><%= name %></p>
@@ -161,3 +165,6 @@ Express.js relies heavily on middleware functions
    <p>{{ name }} </P>
    ```
    - Normal HTML, custom template language
+   - Can't run any logic inside the template
+     - Have to do it all in js
+     - Which is good. Less in template, more in code where it belongs
