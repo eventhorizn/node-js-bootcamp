@@ -154,6 +154,7 @@ Just the way you use it
    <p><%= name %></p>
    ```
    - Use normal html and plain js in templates
+   - [Official Docs](https://ejs.co/#docs)
 1. Pug (Jade)
    ```pug
    p #{name}
@@ -168,3 +169,4 @@ Just the way you use it
    - Can't run any logic inside the template
      - Have to do it all in js
      - Which is good. Less in template, more in code where it belongs
+   - [Official Docs](https://handlebarsjs.com/)
