@@ -170,3 +170,7 @@ Just the way you use it
      - Have to do it all in js
      - Which is good. Less in template, more in code where it belongs
    - [Official Docs](https://handlebarsjs.com/)
+
+# MVC
+
+[Explanation Link](https://developer.mozilla.org/en-US/docs/Glossary/MVC)
