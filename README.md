@@ -174,3 +174,7 @@ Just the way you use it
 # MVC
 
 [Explanation Link](https://developer.mozilla.org/en-US/docs/Glossary/MVC)
+
+# SQL
+
+[MySQL](https://dev.mysql.com/downloads/mysql/)
