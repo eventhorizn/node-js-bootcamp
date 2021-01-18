@@ -177,4 +177,18 @@ Just the way you use it
 
 # SQL
 
-[MySQL](https://dev.mysql.com/downloads/mysql/)
+1. [MySQL](https://dev.mysql.com/downloads/mysql/)
+1. [GitHub](https://github.com/sidorares/node-mysql2)
+
+## Sequelize
+
+1. A JS ORM
+   - Obejct Relational Mapping Library
+1. Models
+   - User, Product
+1. Instances
+   - User.build()
+1. Queries
+   - User.findAll()
+1. Associations
+   - User.hasMany(Product)
