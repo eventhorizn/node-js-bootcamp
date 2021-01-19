@@ -175,12 +175,14 @@ Just the way you use it
 
 [Explanation Link](https://developer.mozilla.org/en-US/docs/Glossary/MVC)
 
-# SQL
+# Databases
+
+## MySQL
 
 1. [MySQL](https://dev.mysql.com/downloads/mysql/)
 1. [GitHub](https://github.com/sidorares/node-mysql2)
 
-## Sequelize
+### Sequelize
 
 [Sequelize](https://sequelize.org/)
 
