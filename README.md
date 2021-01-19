@@ -182,6 +182,8 @@ Just the way you use it
 
 ## Sequelize
 
+[Sequelize](https://sequelize.org/)
+
 1. A JS ORM
    - Obejct Relational Mapping Library
 1. Models
