@@ -1,4 +1,6 @@
+const mongodb = require('mongodb');
 const Product = require('../models/product');
+const ObjectId = mongodb.ObjectId;
 
 exports.getAddProduct = (req, res, next) => {
 	res.render('admin/edit-product', {
@@ -14,7 +16,6 @@ exports.postAddProduct = (req, res, next) => {
 	const price = req.body.price;
 	const description = req.body.description;
 	const product = new Product(title, price, description, imageUrl);
-	// Because they are associated, we can do this
 
 	product
 		.save()
@@ -32,12 +33,8 @@ exports.getEditProduct = (req, res, next) => {
 	}
 
 	const prodId = req.params.productId;
-	req.user
-		.getProducts({ where: { id: prodId } })
-		//Product.findByPk(prodId)
-		.then((products) => {
-			const product = products[0];
-
+	Product.findById(prodId)
+		.then((product) => {
 			if (!product) {
 				return res.redirect('/');
 			}
@@ -52,27 +49,28 @@ exports.getEditProduct = (req, res, next) => {
 		.catch((err) => console.log(err));
 };
 
-// exports.postEditProduct = (req, res, next) => {
-// 	const prodId = req.body.productId;
-// 	const updtTitle = req.body.title;
-// 	const updtPrice = req.body.price;
-// 	const updtImageUrl = req.body.imageUrl;
-// 	const updtDesc = req.body.description;
+exports.postEditProduct = (req, res, next) => {
+	const prodId = req.body.productId;
+	const updatedTitle = req.body.title;
+	const updatedPrice = req.body.price;
+	const updatedImageUrl = req.body.imageUrl;
+	const updatedDesc = req.body.description;
 
-// 	Product.findByPk(prodId)
-// 		.then((product) => {
-// 			product.title = updtTitle;
-// 			product.price = updtPrice;
-// 			product.description = updtDesc;
-// 			product.imageUrl = updtImageUrl;
+	const product = new Product(
+		updatedTitle,
+		updatedPrice,
+		updatedDesc,
+		updatedImageUrl,
+		new ObjectId(prodId)
+	);
 
-// 			return product.save(); // update or override
-// 		})
-// 		.then(() => {
-// 			res.redirect('/admin/products');
-// 		})
-// 		.catch((err) => console.log(err));
-// };
+	product
+		.save()
+		.then((result) => {
+			res.redirect('/admin/products');
+		})
+		.catch((err) => console.log(err));
+};
 
 exports.getProducts = (req, res, next) => {
 	Product.fetchAll()
