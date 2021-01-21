@@ -44,8 +44,10 @@ exports.getIndex = (req, res, next) => {
 
 exports.getCart = (req, res, next) => {
 	req.user
-		.getCart()
-		.then((products) => {
+		.populate('cart.items.productId')
+		.execPopulate()
+		.then((user) => {
+			const products = user.cart.items;
 			res.render('shop/cart', {
 				path: '/cart',
 				pageTitle: 'Your Cart',
@@ -57,6 +59,7 @@ exports.getCart = (req, res, next) => {
 
 exports.postCart = (req, res, next) => {
 	const prodId = req.body.productId;
+
 	Product.findById(prodId)
 		.then((product) => {
 			req.user.addToCart(product);
@@ -69,7 +72,7 @@ exports.postCart = (req, res, next) => {
 exports.postCartDeleteProduct = (req, res, next) => {
 	const prodId = req.body.productId;
 	req.user
-		.deleteItemFromCart(prodId)
+		.removeFromCart(prodId)
 		.then(() => {
 			res.redirect('/cart');
 		})
@@ -77,7 +80,6 @@ exports.postCartDeleteProduct = (req, res, next) => {
 };
 
 exports.postOrder = (req, res, next) => {
-	let fetchedCart;
 	req.user
 		.addOrder()
 		.then(() => {
