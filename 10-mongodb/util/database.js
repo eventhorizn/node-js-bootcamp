@@ -8,7 +8,6 @@ const mongoConnect = (callback) => {
 		'mongodb+srv://garyhake:waystar01@shop.0gwcz.mongodb.net/shop?retryWrites=true&w=majority'
 	)
 		.then((client) => {
-			console.log('Connected!');
 			_db = client.db();
 			callback();
 		})
@@ -22,6 +21,7 @@ const getDb = () => {
 	if (_db) {
 		return _db;
 	}
+
 	throw 'No database found!';
 };
 
