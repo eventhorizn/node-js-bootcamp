@@ -20,8 +20,8 @@ exports.getProduct = (req, res, next) => {
 	Product.findById(prodId)
 		.then((product) => {
 			res.render('shop/product-detail', {
-				pageTitle: product.title,
 				product: product,
+				pageTitle: product.title,
 				path: '/products',
 			});
 		})
@@ -50,8 +50,8 @@ exports.getCart = (req, res, next) => {
 				.getProducts()
 				.then((products) => {
 					res.render('shop/cart', {
-						pageTitle: 'Your Cart',
 						path: '/cart',
+						pageTitle: 'Your Cart',
 						products: products,
 					});
 				})
@@ -82,8 +82,7 @@ exports.postCart = (req, res, next) => {
 				newQuantity = oldQuantity + 1;
 				return product;
 			}
-
-			return Product.findByPk(prodId);
+			return Product.findById(prodId);
 		})
 		.then((product) => {
 			return fetchedCart.addProduct(product, {
@@ -98,7 +97,6 @@ exports.postCart = (req, res, next) => {
 
 exports.postCartDeleteProduct = (req, res, next) => {
 	const prodId = req.body.productId;
-
 	req.user
 		.getCart()
 		.then((cart) => {
@@ -108,7 +106,7 @@ exports.postCartDeleteProduct = (req, res, next) => {
 			const product = products[0];
 			return product.cartItem.destroy();
 		})
-		.then(() => {
+		.then((result) => {
 			res.redirect('/cart');
 		})
 		.catch((err) => console.log(err));
@@ -116,7 +114,6 @@ exports.postCartDeleteProduct = (req, res, next) => {
 
 exports.postOrder = (req, res, next) => {
 	let fetchedCart;
-
 	req.user
 		.getCart()
 		.then((cart) => {
@@ -124,7 +121,7 @@ exports.postOrder = (req, res, next) => {
 			return cart.getProducts();
 		})
 		.then((products) => {
-			req.user
+			return req.user
 				.createOrder()
 				.then((order) => {
 					return order.addProducts(
@@ -136,10 +133,10 @@ exports.postOrder = (req, res, next) => {
 				})
 				.catch((err) => console.log(err));
 		})
-		.then(() => {
+		.then((result) => {
 			return fetchedCart.setProducts(null);
 		})
-		.then(() => {
+		.then((result) => {
 			res.redirect('/orders');
 		})
 		.catch((err) => console.log(err));
@@ -150,8 +147,8 @@ exports.getOrders = (req, res, next) => {
 		.getOrders({ include: ['products'] })
 		.then((orders) => {
 			res.render('shop/orders', {
-				pageTitle: 'Your Orders',
 				path: '/orders',
+				pageTitle: 'Your Orders',
 				orders: orders,
 			});
 		})

@@ -7,8 +7,6 @@ class Product {
 		this.price = price;
 		this.description = description;
 		this.imageUrl = imageUrl;
-		console.log(typeof id);
-		console.log(id);
 		this._id = id;
 	}
 
@@ -17,7 +15,6 @@ class Product {
 		let dbOp;
 
 		if (this._id) {
-			// Update the product
 			dbOp = db
 				.collection('products')
 				.updateOne({ _id: new mongodb.ObjectId(this._id) }, { $set: this });
@@ -36,11 +33,13 @@ class Product {
 
 	static fetchAll() {
 		const db = getDb();
+
 		return db
 			.collection('products')
 			.find()
 			.toArray()
 			.then((products) => {
+				console.log(products);
 				return products;
 			})
 			.catch((err) => {
@@ -50,11 +49,13 @@ class Product {
 
 	static findById(prodId) {
 		const db = getDb();
+
 		return db
 			.collection('products')
-			.find({ _id: mongodb.ObjectId(prodId) })
+			.find({ _id: new mongodb.ObjectId(prodId) })
 			.next()
 			.then((product) => {
+				console.log(product);
 				return product;
 			})
 			.catch((err) => {
