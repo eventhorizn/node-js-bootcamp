@@ -171,7 +171,7 @@ Just the way you use it
      - Which is good. Less in template, more in code where it belongs
    - [Official Docs](https://handlebarsjs.com/)
 
-# MVC
+## MVC
 
 [Explanation Link](https://developer.mozilla.org/en-US/docs/Glossary/MVC)
 
@@ -212,3 +212,12 @@ Just the way you use it
 1. Work w/ Schemas & Models
 1. Use Instances of Schemas & Models
 1. Run Queries
+
+# Sessions & Cookies
+
+## Cookie
+
+- Example: Am I Logged In?
+- Store this information in the browser
+
+![](images/cookie.png)
