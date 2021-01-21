@@ -201,3 +201,14 @@ Just the way you use it
 
 1. [Site Link](https://www.mongodb.com/)
    - Popular NoSQL option
+
+### Mongoose
+
+[Mongoose](https://mongoosejs.com/docs/)
+
+1. ODM
+   - Object Document Mapping Library
+   - Like ORM but for documents
+1. Work w/ Schemas & Models
+1. Use Instances of Schemas & Models
+1. Run Queries
