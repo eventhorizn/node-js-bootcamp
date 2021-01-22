@@ -236,8 +236,18 @@ Just the way you use it
 
 ## CSRF Attacks
 
+[Documentation](https://www.acunetix.com/websitesecurity/csrf-attacks/)
+
 1. Cross-Site Request Forgery
 1. Session gets stolen
 1. Need to make sure the session isn't available on any other pages but your own
 
 ![](images/csrf-attack.png)
+
+## Encrypting Passwords
+
+[bcrypt](https://github.com/dcodeIO/bcrypt.js)
+
+## Sending Emails
+
+[SendGrid]
