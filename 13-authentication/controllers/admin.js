@@ -14,7 +14,6 @@ exports.postAddProduct = (req, res, next) => {
 	const imageUrl = req.body.imageUrl;
 	const price = req.body.price;
 	const description = req.body.description;
-
 	const product = new Product({
 		title: title,
 		price: price,
@@ -22,7 +21,6 @@ exports.postAddProduct = (req, res, next) => {
 		imageUrl: imageUrl,
 		userId: req.user,
 	});
-
 	product
 		.save()
 		.then(() => {
@@ -38,14 +36,12 @@ exports.getEditProduct = (req, res, next) => {
 	if (!editMode) {
 		return res.redirect('/');
 	}
-
 	const prodId = req.params.productId;
 	Product.findById(prodId)
 		.then((product) => {
 			if (!product) {
 				return res.redirect('/');
 			}
-
 			res.render('admin/edit-product', {
 				pageTitle: 'Edit Product',
 				path: '/admin/edit-product',
@@ -81,6 +77,7 @@ exports.postEditProduct = (req, res, next) => {
 exports.getProducts = (req, res, next) => {
 	Product.find()
 		.then((products) => {
+			console.log(products);
 			res.render('admin/products', {
 				prods: products,
 				pageTitle: 'Admin Products',

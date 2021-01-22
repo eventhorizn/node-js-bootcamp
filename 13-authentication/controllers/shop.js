@@ -18,7 +18,6 @@ exports.getProducts = (req, res, next) => {
 
 exports.getProduct = (req, res, next) => {
 	const prodId = req.params.productId;
-
 	Product.findById(prodId)
 		.then((product) => {
 			res.render('shop/product-detail', {
@@ -64,7 +63,6 @@ exports.getCart = (req, res, next) => {
 
 exports.postCart = (req, res, next) => {
 	const prodId = req.body.productId;
-
 	Product.findById(prodId)
 		.then((product) => {
 			return req.user.addToCart(product);
@@ -76,7 +74,6 @@ exports.postCart = (req, res, next) => {
 
 exports.postCartDeleteProduct = (req, res, next) => {
 	const prodId = req.body.productId;
-
 	req.user
 		.removeFromCart(prodId)
 		.then(() => {
@@ -93,7 +90,6 @@ exports.postOrder = (req, res, next) => {
 			const products = user.cart.items.map((i) => {
 				return { quantity: i.quantity, product: { ...i.productId._doc } };
 			});
-
 			const order = new Order({
 				user: {
 					name: req.user.name,
@@ -101,10 +97,9 @@ exports.postOrder = (req, res, next) => {
 				},
 				products: products,
 			});
-
 			return order.save();
 		})
-		.then(() => {
+		.then((result) => {
 			return req.user.clearCart();
 		})
 		.then(() => {
