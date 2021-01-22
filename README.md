@@ -218,6 +218,12 @@ Just the way you use it
 ## Cookie
 
 - Example: Am I Logged In?
-- Store this information in the browser
+- Store this information in the browser (client)
 
 ![](images/cookie.png)
+
+## Sessions
+
+- Like a cookie, but server side
+
+![](images/session.png)
