@@ -219,11 +219,13 @@ Just the way you use it
 
 - Example: Am I Logged In?
 - Store this information in the browser (client)
+- [Explanation Link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 
 ![](images/cookie.png)
 
 ## Sessions
 
 - Like a cookie, but server side
+- [Explanation Link](https://www.quora.com/What-is-a-session-in-a-Web-Application)
 
 ![](images/session.png)
