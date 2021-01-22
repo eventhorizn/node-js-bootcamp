@@ -229,3 +229,15 @@ Just the way you use it
 - [Explanation Link](https://www.quora.com/What-is-a-session-in-a-Web-Application)
 
 ![](images/session.png)
+
+# Authentication
+
+![](images/authentication.png)
+
+## CSRF Attacks
+
+1. Cross-Site Request Forgery
+1. Session gets stolen
+1. Need to make sure the session isn't available on any other pages but your own
+
+![](images/csrf-attack.png)
