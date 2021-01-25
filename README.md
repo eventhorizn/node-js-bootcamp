@@ -254,3 +254,7 @@ Just the way you use it
 
 1. Annoying due to needing to verify sender
    - Ended up using my gmail account (which wasn't recommended)
+
+# Validation
+
+1. [Express Validator](https://express-validator.github.io/docs/)
