@@ -258,3 +258,5 @@ Just the way you use it
 # Validation
 
 1. [Express Validator](https://express-validator.github.io/docs/)
+1. [validator.js](https://github.com/validatorjs/validator.js)
+   - Used behind the scenes
