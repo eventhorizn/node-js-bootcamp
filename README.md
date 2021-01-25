@@ -250,4 +250,7 @@ Just the way you use it
 
 ## Sending Emails
 
-[SendGrid]
+[SendGrid](https://sendgrid.com/)
+
+1. Annoying due to needing to verify sender
+   - Ended up using my gmail account (which wasn't recommended)
