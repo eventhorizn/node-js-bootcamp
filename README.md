@@ -260,3 +260,22 @@ Just the way you use it
 1. [Express Validator](https://express-validator.github.io/docs/)
 1. [validator.js](https://github.com/validatorjs/validator.js)
    - Used behind the scenes
+
+# Error Handling
+
+## Http Response Codes
+
+[Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+
+1. 2xx (Success)
+   - 200: Operation Succeeded
+   - 201: Success, resource created
+1. 3xx (Redirect)
+   - 301: Moved permanently
+1. 4xx (Client side error)
+   - 401: Not authenticated
+   - 403: Not authorized
+   - 404: Not fouond
+   - 422: Invalid Input
+1. 5xx (Server side error)
+   - 500: Server-side Error
