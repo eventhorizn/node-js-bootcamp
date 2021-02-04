@@ -263,6 +263,8 @@ Just the way you use it
 
 # Error Handling
 
+[Express Error Handling](https://expressjs.com/en/guide/error-handling.html)
+
 ## Http Response Codes
 
 [Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
