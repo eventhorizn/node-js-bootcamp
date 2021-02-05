@@ -281,3 +281,10 @@ Just the way you use it
    - 422: Invalid Input
 1. 5xx (Server side error)
    - 500: Server-side Error
+
+# File Upload/Download
+
+1. Using an extension called 'Multer'
+   - BodyParser can't parse file data
+   - Parses requests for 'mixed' (file) data
+   - We'll keep BodyParser as we still have forms (sign up) that only have url encoded data
