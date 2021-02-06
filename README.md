@@ -284,7 +284,11 @@ Just the way you use it
 
 # File Upload/Download
 
-1. Using an extension called 'Multer'
+1. Using an extension called [Multer](https://github.com/expressjs/multer)
    - BodyParser can't parse file data
    - Parses requests for 'mixed' (file) data
    - We'll keep BodyParser as we still have forms (sign up) that only have url encoded data
+1. Creating pdf
+   - PDFKit
+   - [Styling PDF](http://pdfkit.org/docs/text.html)
+1. [Streaming Files](https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/)
