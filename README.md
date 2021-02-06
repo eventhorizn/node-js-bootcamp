@@ -300,3 +300,6 @@ Just the way you use it
      - These will allow us to get a specified number and skip a specificed number
    - How to do with a regular db?
      - [Link](https://stackoverflow.com/questions/3799193/mysql-data-best-way-to-implement-paging)
+1. Async Requests
+   - [fetch API](https://developers.google.com/web/updates/2015/03/introduction-to-fetch)
+   - [AJAX](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started)
