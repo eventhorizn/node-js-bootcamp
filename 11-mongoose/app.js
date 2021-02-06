@@ -9,6 +9,9 @@ const User = require('./models/user');
 
 const app = express();
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
@@ -33,9 +36,7 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 mongoose
-	.connect(
-		'mongodb+srv://garyhake:waystar01@shop.0gwcz.mongodb.net/shop?retryWrites=true&w=majority'
-	)
+	.connect(process.env.MONGODB_URI)
 	.then(() => {
 		User.findOne().then((user) => {
 			if (!user) {

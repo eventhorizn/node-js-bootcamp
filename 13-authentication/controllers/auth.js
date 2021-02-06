@@ -2,14 +2,15 @@ const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const User = require('../models/user');
 
 const transporter = nodemailer.createTransport(
 	sendgridTransport({
 		auth: {
-			api_key:
-				'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',
+			api_key: process.env.SENDGRID_API_KEY,
 		},
 	})
 );
@@ -105,7 +106,7 @@ exports.postSignup = (req, res, next) => {
 					res.redirect('/login');
 					return transporter.sendMail({
 						to: email,
-						from: 'garyhake@gmail.com',
+						from: 'devgaryhake@gmail.com',
 						subject: 'Signup succeeded!',
 						html: '<h1>You successfully signed up!</h1>',
 					});
@@ -164,7 +165,7 @@ exports.postReset = (req, res, next) => {
 				res.redirect('/');
 				transporter.sendMail({
 					to: req.body.email,
-					from: 'garyhake@gmail.com',
+					from: 'devgaryhake@gmail.com',
 					subject: 'Password Reset',
 					html: `
 					<p>You requested a password reset</p>
