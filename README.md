@@ -292,3 +292,11 @@ Just the way you use it
    - PDFKit
    - [Styling PDF](http://pdfkit.org/docs/text.html)
 1. [Streaming Files](https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/)
+
+# Pagination, Async, and Payments
+
+1. Pagination
+   - With Mongoose and MongoDB, we can call Limit() and Skip() functions
+     - These will allow us to get a specified number and skip a specificed number
+   - How to do with a regular db?
+     - [Link](https://stackoverflow.com/questions/3799193/mysql-data-best-way-to-implement-paging)
