@@ -303,3 +303,9 @@ Just the way you use it
 1. Async Requests
    - [fetch API](https://developers.google.com/web/updates/2015/03/introduction-to-fetch)
    - [AJAX](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started)
+1. Payments
+   - Using [Stripe](https://dashboard.stripe.com/test/dashboard)
+     - All test data
+   - Set up account
+   - You'll have a public and private api key (private stays in env)
+   - Make sure you add name to your account
