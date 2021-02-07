@@ -309,3 +309,36 @@ Just the way you use it
    - Set up account
    - You'll have a public and private api key (private stays in env)
    - Make sure you add name to your account
+
+# Rest API
+
+Representational State Transfer
+
+- Transfer data instead of User Interfaces
+
+![](images/rest-api-big-pic.png)
+
+## Data Formats
+
+![](images/rest-api-data-format.png)
+
+## Routing
+
+- Routing uses http methods (GET/POST)
+  - More than just GET and POST
+
+![](images/rest-http-method.png)
+
+## Principles
+
+![](images/rest-api-principles.png)
+
+## CORS
+
+- Can't share resources across domains
+
+![](images/cors-error.png)
+
+- But we **want** to allow this, so we can overwrite this
+- This makes sense for some things, but for REST apis, it doesn't
+- We need to tell the browser to accept by setting specific headers
