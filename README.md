@@ -342,3 +342,15 @@ Representational State Transfer
 - But we **want** to allow this, so we can overwrite this
 - This makes sense for some things, but for REST apis, it doesn't
 - We need to tell the browser to accept by setting specific headers
+
+## Authorization
+
+1. When a user is authenticated, we don't store any session data on the api
+   - API's are 'stateless'
+1. Instead we store a token on the client side
+   - That stored token is sent to authorize subsequent requests
+
+![](images/api-auth.png)
+
+1. Using jsonwebtoken for node.js JWT
+   - [JWT Docs](https://jwt.io/)
