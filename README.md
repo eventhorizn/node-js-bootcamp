@@ -361,3 +361,32 @@ Representational State Transfer
 1. [Socket.io](https://socket.io/)
 
 ![](images/web-socket.png)
+
+1. Install on Server
+
+   ```bash
+   npm install --save socket.io
+   ```
+
+   ```js
+   const server = app.listen(8080);
+
+   const io = require('socket.io')(server);
+   io.on('connection', (socket) => {
+   	console.log('Client Connected');
+   });
+   ```
+
+1. Install on Client
+
+   ```bash
+   npm install --save socket.io-client
+   ```
+
+   ```js
+   import openSocket from 'socket.io-client';
+
+   openSocket('http://localhost:8080');
+   ```
+
+1. [Handling CORS](https://socket.io/docs/v3/handling-cors/)
