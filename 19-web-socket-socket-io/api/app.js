@@ -76,7 +76,7 @@ mongoose
 
 		const io = require('./socket').init(server);
 		io.on('connection', (socket) => {
-			console.log('Client Connected');
+			//console.log('Client Connected');
 		});
 	})
 	.catch((err) => {
