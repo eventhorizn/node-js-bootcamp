@@ -354,3 +354,10 @@ Representational State Transfer
 
 1. Using jsonwebtoken for node.js JWT
    - [JWT Docs](https://jwt.io/)
+
+# Web Sockets
+
+1. Allows you to build real time web services
+1. [Socket.io](https://socket.io/)
+
+![](images/web-socket.png)
