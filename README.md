@@ -409,3 +409,21 @@ Representational State Transfer
 ## GraphQL Operation Types
 
 ![](images/graph-ql-op-type.png)
+
+## GraphQL Setup
+
+```js
+app.use(
+	'/graphql',
+	graphqlHTTP({
+		schema: graphqlSchema,
+		rootValue: graphqlResolver,
+		graphiql: true,
+	})
+);
+```
+
+1. The 'graphiql' setting allows you to visit:
+   - http://localhost:8080/graphql
+   - Which allows you to write queries
+     ![](images/graphiql.png)
