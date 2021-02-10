@@ -390,3 +390,22 @@ Representational State Transfer
    ```
 
 1. [Handling CORS](https://socket.io/docs/v3/handling-cors/)
+1. [Alternative Websocket](https://www.npmjs.com/package/express-ws)
+
+# GraphQL
+
+[Documentation](https://graphql.org/)
+
+![](images/graph-ql-big-pic.png)
+
+- Think database query but for front end data (from api)
+- You send your query as a parameter
+  - GraphQL specific language
+
+## REST API Limitations
+
+![](images/rest-api-limit.png)
+
+## GraphQL Operation Types
+
+![](images/graph-ql-op-type.png)
