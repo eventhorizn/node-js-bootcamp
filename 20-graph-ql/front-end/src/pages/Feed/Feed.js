@@ -171,6 +171,7 @@ class Feed extends Component {
 			.then((fileResData) => {
 				const imageUrl = fileResData.filePath;
 
+				console.log(imageUrl);
 				let graphqlQuery = {
 					query: `
 						mutation {
@@ -211,7 +212,8 @@ class Feed extends Component {
 				}
 
 				if (resData.errors) {
-					throw new Error('User login failed');
+					console.log(resData.errors[0]);
+					throw new Error('Adding post failed');
 				}
 
 				console.log(resData);
