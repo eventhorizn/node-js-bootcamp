@@ -467,3 +467,5 @@ app.use(
    - [morgan](https://www.npmjs.com/package/morgan)
 1. Heroku is where we are hosting
    - I may eventually build a node droplet on DO
+   - Need to assign a static ip to your app
+   - Add that ip to mongodb whitelist
