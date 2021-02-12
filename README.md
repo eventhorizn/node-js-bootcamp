@@ -465,7 +465,10 @@ app.use(
    - Only use is your hosting provider doesn't (hosting on own server)
 1. Logging
    - [morgan](https://www.npmjs.com/package/morgan)
-1. Heroku is where we are hosting
-   - I may eventually build a node droplet on DO
-   - Need to assign a static ip to your app
-   - Add that ip to mongodb whitelist
+1. [Digial Ocean Setup](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-20-04)
+   - I'll have deployment notes in my personal wiki once I get this stood up
+
+# Testing
+
+1. We are testing the api we made after converting to async await
+1. Using [mocha](https://mochajs.org/) and [chai](https://www.chaijs.com/) to test
