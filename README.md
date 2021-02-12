@@ -472,3 +472,23 @@ app.use(
 
 1. We are testing the api we made after converting to async await
 1. Using [mocha](https://mochajs.org/) and [chai](https://www.chaijs.com/) to test
+   - Needs a 'test' folder
+1. mocha is used to run tests and define the 'it' structure of a test
+   ```js
+   it('should add numbers correctly', function () {
+   	const num1 = 2;
+   	const num2 = 3;
+   });
+   ```
+1. chai is used to define success conditions
+
+   ```js
+   const expect = require('chai').expect;
+
+   it('should add numbers correctly', function () {
+   	const num1 = 2;
+   	const num2 = 3;
+
+   	expect(num1 + num2).to.equal(5);
+   });
+   ```
