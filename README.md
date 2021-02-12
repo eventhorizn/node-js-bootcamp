@@ -450,3 +450,18 @@ app.use(
    	})
    );
    ```
+
+# Deployment
+
+1. dotenv is how I'm protecting password and api information
+   - I'll need to figure out how heroku does dotenv
+1. It's recommended to use the production api for stripe...I'm staying with test
+   - I don't actually want real transactions
+1. Setting secure response headers
+   - [Helment](https://www.npmjs.com/package/helmet)
+1. Compressing Assets
+   - [expressjs Compression](https://github.com/expressjs/compression)
+   - Files that are served to client are much smaller
+   - Only use is your hosting provider doesn't (hosting on own server)
+1. Logging
+   - [morgan](https://www.npmjs.com/package/morgan)
