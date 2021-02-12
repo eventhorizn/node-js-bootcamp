@@ -465,3 +465,5 @@ app.use(
    - Only use is your hosting provider doesn't (hosting on own server)
 1. Logging
    - [morgan](https://www.npmjs.com/package/morgan)
+1. Heroku is where we are hosting
+   - I may eventually build a node droplet on DO
