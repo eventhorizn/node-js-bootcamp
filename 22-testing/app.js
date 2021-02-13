@@ -1,18 +1,17 @@
+require('dotenv').config();
+
 const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const multer = require('multer');
-const dotenv = require('dotenv');
 const { v4: uuidv4 } = require('uuid');
 
 const feedRoutes = require('./routes/feed');
 const authRoutes = require('./routes/auth');
 
 const app = express();
-
-dotenv.config();
 
 const fileStorage = multer.diskStorage({
 	destination: (req, file, cb) => {
