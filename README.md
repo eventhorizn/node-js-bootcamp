@@ -492,3 +492,5 @@ app.use(
    	expect(num1 + num2).to.equal(5);
    });
    ```
+
+1. sinon is used to create stubs
