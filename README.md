@@ -493,4 +493,36 @@ app.use(
    });
    ```
 
-1. sinon is used to create stubs
+1. [sinon](https://sinonjs.org/) is used to create stubs
+
+# Modern JS in Node
+
+[Official Docs](https://nodejs.org/dist/latest-v14.x/docs/api/esm.html)
+
+1. Using ES6 Imports and Exports instead of node
+   ```js
+   const express = require('express');
+   ```
+   ```js
+   import express from 'express';
+   ```
+1. Globals are not accessible the same as before (imported differently)
+
+   ```js
+   import fs from 'fs';
+   import { fileURLToPath } from 'url';
+   import path, { dirname } from 'path';
+
+   // using es6 imports makes us have to do this to access node globals
+   const __filename = fileURLToPath(import.meta.url);
+   const __dirname = dirname(__filename);
+
+   const resHandler = (req, res, next) => {
+   	// using a different function to highlight node global issue
+   	res.sendFile(path.join(__dirname, 'my-page.html'));
+   };
+
+   export default resHandler;
+   ```
+
+   - Before we could just reference `__dirname`
