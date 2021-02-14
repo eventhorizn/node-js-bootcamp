@@ -526,3 +526,31 @@ app.use(
    ```
 
    - Before we could just reference `__dirname`
+
+# Deno
+
+- Alternative to node
+  - Created by inventer of node
+- Deno is a JS runtime based on Chrome's V8 JS engine
+  - Allows you to run JS outside of browser
+- Deno is also a TS runtime
+  - Node itself is only capable of running js (need to convert)
+  - Deno can run uncompiled T
+- Deno supports URL imports and modern JS features
+  - Out of the box
+  - It's newer, so ofc it does
+- Deno is 'secure by default'
+  - Rquires explicit execution permissions
+
+![](images/deno-vs-node.png)
+
+1. Deno setup
+   - [Deno Site](https://deno.land/)
+   ```ps
+   iwr https://deno.land/x/install/install.ps1 -useb | iex
+   ```
+1. Run Deno w/ permissions
+   - Required for reading, writing, and sending requests
+   ```
+   deno run --allow-write app.ts
+   ```
