@@ -554,3 +554,7 @@ app.use(
    ```
    deno run --allow-write app.ts
    ```
+1. Run Deno server
+   ```
+   deno run --allow-net app.ts
+   ```
